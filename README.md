@@ -1,62 +1,45 @@
-_This is an assignment to the class [Advanced Programming](https://hsro-inf-fpk.github.io) at the [University of Applied Sciences Rosenheim](http://www.th-rosenheim.de)._
+# Assignment: Creating a Magical Linked List - Preparing for Hogwarts
 
-# Assignment 2: Classes and interfaces revisited
 
-In this assignment we'll be looking at 
-- static and regular inner classes
-- anonymous classes
-- lambda expressions and `@FunctionalInterface`
-by implementing a basic linked list.
+In this assignment, we'll delve into the magical world of Hogwarts by creating a system to prepare aspiring wizards and witches for their journey to the famed school of witchcraft and wizardry.
 
-## Task 1: On paper!
+## Task 1: Creating the Hogwarts Preparatory List
 
-A linked list consists of a _controller_ (the _list_ class) and elements that contain the actual payload (the _container_ or _element_ class).
-The controller class maintains a reference to the first list element (`head`), and every element points to its successor (or to a `null` value, if it's the last).
-Draft the UML class diagram on paper that shows a class `SimpleListImpl` which contains the Class `Element` and the class `SimpleIteratorImpl`. 
-The `SimpleIteratorImpl` class implements the interfaces `java.util.Iterator<T>` and the SimpleListImpl implements the interface `java.lang.Iterable<T>.
+### Storyline
+Imagine yourself as a young wizard or witch, eagerly preparing to embark on a life-changing journey to Hogwarts School of Witchcraft and Wizardry. To ensure you're fully equipped for your magical education, you've been provided with a comprehensive list of essential items.
 
-### Think about the following: Static and regular inner classes
+### Requirements
 
-- [What is a static class?](http://lmgtfy.com/?q=java+static+inner+class)
-	- Refresh your knowledge on UML (_e.g._ [here](http://plantuml.com/class-diagram))
-	- What's the difference between a regular inner and static inner class?
-	- Can you think of some use cases for both?
+#### Create the UML Class Diagram
+- Design a `HogwartsPreparation` class that encompasses the various elements required for a wizarding education.
+- Utilize classes such as `Wand`, `Spellbook`, `Robes`, and `PotionIngredients`.
+- Illustrate the relationships between these elements using UML diagrams.
 
-_Note: the concept of an iterator will be discussed in detail in a few weeks._
+#### Static Inner Classes for Magical Items
+- Implement the `Wand`, `Spellbook`, `Robes`, and `PotionIngredients` as static inner classes within the `HogwartsPreparation` class.
+- Consider the nature of these items and why making them static within the context of magical preparation might be beneficial.
 
----
+#### Reflection
+Think about the significance of having these elements encapsulated within a single class, resembling a wizard's starter kit.
 
 ## Task 2: Implementation
-Here is the final class diagram of the exercise: 
-
-![Classes](assets/class-spec.svg)
-
 
 ### Setup
-
-1. Create a fork of this repository.
-2. Clone your fork to get a local working copy.
-3. Import the project to your IDE.
-
+1. Fork the magical repository provided.
+2. Clone the forked repository to your local environment.
+3. Import the project into your preferred IDE.
 
 ### Details
+1. Implement the `Wand`, `Spellbook`, `Robes`, and `PotionIngredients` classes as static inner classes within the `HogwartsPreparation` class.
+	- Discuss why these classes are encapsulated within the main class and examine their significance in a wizard's journey to Hogwarts.
 
-1. Implement `Element` as static inner class of `SimpleListImpl`.
-	- Why is this class static, and ideally `private`?
-1. Implement the `Iterator` interface as inner class of `SimpleListImpl`.
-	- Why is it helpful to make this class non-static?
-3. Add the `Iterable` interface to your `SimpleListImpl`, and implement the required methods.
-	- Why is implementing the `Iterable` interface essential for a (good) list implementation? (Hint: Check the test cases!)
-	- Are there any language definition constraints to this?
+2. Add functionalities to the magical items.
+	- Consider methods to describe the properties of each item (e.g., `describeWand()`, `describeSpellbook()`).
+	- Implement interfaces to manage the magical properties and attributes of these items.
 
+### Enchanting the List
+Utilize the magic of Java programming to create an enchanting experience:
 
-### Anonymous (inner) classes and lambda expressions
-
-1. Implement the `filter` method for your `SimpleListImpl` class (see `SimpleFilter` interface).
-2. Check the given test suite for an example on 
-	- how to use an anonymous class with an interface.
-	- how an anonymous class can be replaced by a lambda expression.
-3. Add some test methods and implement another filter logic (_e.g._ every third number, or any number smaller than a certain value).
-5. Review anonymous classes and lambdas.
-	- Lambda expressions look very convenient; can you think of a scenario where they should not be used?
-	- Recall how scoping works for anonymous (inner or local) classes; can you think of a scenario where to avoid them?
+- Implement `Iterable` for the `HogwartsPreparation` class to manage the magical items.
+- Develop a sorting spell using lambda expressions to sort the items based on their magical attributes.
+- Utilize anonymous inner classes for creating magical filters that enhance the learning and preparation process for Hogwarts.
