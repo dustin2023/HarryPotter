@@ -1,6 +1,15 @@
 package org.example;
 
-// aka SimpleList
+/**
+ * Copyright (c) 29.11.23, 19:57
+ * Since: November 2023
+ * Author: dustin
+ * Name: WizardToolkit.java
+ * Project-name: HarryPotter
+ * <p>
+ * aka SimpleList
+ */
+
 public interface WizardToolkit {
     /**
      * Add a given object to the back of the list.

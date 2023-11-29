@@ -1,9 +1,4 @@
 package org.example;
-
-/**
- * @author Peter Kurfer
- * Created on 10/6/17.
- */
 @FunctionalInterface
 public interface WizardFilter {
 	/**
