@@ -32,7 +32,7 @@ class SpellbookListImple implements SpellbookList, Iterable {
 
 -class SpellbookElement {
 	-item: Object
-    -next: Element
+    -next: SpellbookElement
 }
 
 SpellbookElement --* SpellbookListImple : head

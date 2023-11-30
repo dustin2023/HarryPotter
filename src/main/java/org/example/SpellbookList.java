@@ -26,6 +26,6 @@ public interface SpellbookList {
      *
      * @return a new, filtered list
      */
-    SimpleFilter filter(SimpleFilter filter);
+    SpellbookList filter(SimpleFilter filter);
 }
 
