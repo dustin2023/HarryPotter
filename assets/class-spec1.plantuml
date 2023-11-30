@@ -1,0 +1,29 @@
+@startuml
+
+class HogwartsPreparation {
+    // Methods and attributes for HogwartsPreparation class
+
+}
+
+class Wand {
+    // Properties and methods for Wand class
+}
+
+class Spellbook {
+    // Properties and methods for Spellbook class
+}
+
+class Robes {
+    // Properties and methods for Robes class
+}
+
+class PotionIngredients {
+    // Properties and methods for PotionIngredients class
+}
+
+HogwartsPreparation --> Wand
+HogwartsPreparation --> Spellbook
+HogwartsPreparation --> Robes
+HogwartsPreparation --> PotionIngredients
+
+@enduml

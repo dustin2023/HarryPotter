@@ -4,13 +4,13 @@ package org.example;
  * Copyright (c) 29.11.23, 19:57
  * Since: November 2023
  * Author: dustin
- * Name: WizardToolkit.java
+ * Name: SpellbookList.java
  * Project-name: HarryPotter
  * <p>
  * aka SimpleList
  */
 
-public interface WizardToolkit {
+public interface SpellbookList {
     /**
      * Add a given object to the back of the list.
      */
@@ -26,6 +26,6 @@ public interface WizardToolkit {
      *
      * @return a new, filtered list
      */
-    WizardToolkit filter(WizardFilter filter);
+    SimpleFilter filter(SimpleFilter filter);
 }
 

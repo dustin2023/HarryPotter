@@ -1,0 +1,43 @@
+@startuml
+interface SimpleFilter {
+	+boolean include(Object item)
+}
+
+interface Iterable {
+	+Iterator iterator()
+}
+
+interface Iterator {
+	+boolean hasNext()
+    +Object next()
+}
+
+
+interface SpellbookList {
+    +void add(Object item)
+    +int size()
+    +SpellbookList filter(SimpleFilter filter)_
+}
+
+class SpellbookListImple implements SpellbookList, Iterable {
+    - head: SpellbookElement
+
+    +void add(Object item)
+    +int size()
+    +iterator(): SpellbookIterator
+}
+
+-class SpellbookIterator implements Iterator {
+}
+
+-class SpellbookElement {
+	-item: Object
+    -next: Element
+}
+
+SpellbookElement --* SpellbookListImple : head
+SpellbookElement --* SpellbookElement : next
+SpellbookElement --+ SpellbookListImple
+SimpleFilter <.. SpellbookList
+SpellbookListImple --+ SpellbookIterator
+@enduml

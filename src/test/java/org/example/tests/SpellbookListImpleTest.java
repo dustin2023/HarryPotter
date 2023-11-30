@@ -1,16 +1,7 @@
-/*
- * Copyright (c) 29-29.11.23, 20:05
- * Since: November 2023
- * Author: dustin
- * Name: WizardToolkitTest.java
- * Project-name: HarryPotter
- *
- */
-
 package org.example.tests;
 
-import org.example.HogwartsToolkit;
-import org.example.WizardFilter;
+import org.example.SimpleFilter;
+import org.example.SpellbookListImple;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -23,17 +14,17 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * <p>
  * Author: dustin
  * <p>
- * Name: WizardFilter.java
+ * Name: SimpleFilter.java
  * <p>
  * Project-name: HarryPotter
  */
-public class WizardToolkitTest {
+public class SpellbookListImpleTest {
 
-    private HogwartsToolkit testList;
+    private SpellbookListImple testList;
 
     @BeforeEach
     void setup() {
-        testList = new HogwartsToolkit();
+        testList = new SpellbookListImple();
 
         testList.add(1);
         testList.add(2);
@@ -58,7 +49,7 @@ public class WizardToolkitTest {
 
     @Test
     void testFilterAnonymousClass() {
-        HogwartsToolkit result = (HogwartsToolkit) testList.filter(new WizardFilter() {    // create a new SimpleListImpl called result, which will hold the filtered elements.
+        SpellbookListImple result = (SpellbookListImple) testList.filter(new SimpleFilter() {    // create a new SimpleListImpl called result, which will hold the filtered elements.
 
             @Override
             public boolean include(Object item) {    // You use an anonymous class to implement the SimpleFilter interface and override the include method to define the filter logic.
@@ -76,7 +67,7 @@ public class WizardToolkitTest {
 
     @Test
     void testFilterEveryThirdNumber() {
-        HogwartsToolkit result = (HogwartsToolkit) testList.filter(new WizardFilter() {    // create a new SimpleListImpl called result, which will hold the filtered elements.
+        SpellbookListImple result = (SpellbookListImple) testList.filter(new SimpleFilter() {    // create a new SimpleListImpl called result, which will hold the filtered elements.
             @Override
             public boolean include(Object item) {
                 int current = (int) item;
@@ -91,7 +82,7 @@ public class WizardToolkitTest {
 
     @Test
     void testFilterEvenNumbers() {
-        HogwartsToolkit result = (HogwartsToolkit) testList.filter(new WizardFilter() {
+        SpellbookListImple result = (SpellbookListImple) testList.filter(new SimpleFilter() {
             @Override
             public boolean include(Object item) {
                 int current = (int) item;
@@ -107,7 +98,7 @@ public class WizardToolkitTest {
 
     @Test
     void testFilterLambda() {
-        HogwartsToolkit result = (HogwartsToolkit) testList.filter(o -> ((int) o) % 2 == 0);
+        SpellbookListImple result = (SpellbookListImple) testList.filter(o -> ((int) o) % 2 == 0);
         for (Object o : result) {
             int i = (int) o;
             assertTrue(i % 2 == 0);
@@ -116,7 +107,7 @@ public class WizardToolkitTest {
 
     @Test
     void testFilterThirdNumbersLambda() {
-        HogwartsToolkit result = (HogwartsToolkit) testList.filter(o -> ((int) o) % 3 == 0);
+        SpellbookListImple result = (SpellbookListImple) testList.filter(o -> ((int) o) % 3 == 0);
         for (Object o : result) {
             int i = (int) o;
             assertTrue(i % 3 == 0);
