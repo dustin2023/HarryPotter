@@ -1,7 +1,7 @@
-package org.example.tests;
+package assignment.one_simple_list.tests;
 
-import org.example.SimpleFilter;
-import org.example.SpellbookListImpl;
+import assignment.one_simple_list.SimpleFilter;
+import assignment.one_simple_list.SpellbookListImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
