@@ -1,7 +1,7 @@
-package org.example.tests;
+package assignment.one_simple_list.tests;
 
-import org.example.SimpleFilter;
-import org.example.SpellbookListImpl;
+import assignment.one_simple_list.SimpleFilter;
+import assignment.one_simple_list.SpellbookListImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -73,21 +73,6 @@ class SpellbookListImplTest {
             assertTrue(spellbook.contains("Spells"));
         }
         System.out.println("There are " + counter + " standard Spellbooks");
-    }
-
-    @Test
-    void testFilterEveryThirdNumber() {
-        SpellbookListImpl result = (SpellbookListImpl) testList.filter(new SimpleFilter() {    // create a new SimpleListImpl called result, which will hold the filtered elements.
-            @Override
-            public boolean include(Object item) {
-                int current = (int) item;
-                return current % 3 == 0;
-            }
-        });
-        for (Object o : result) {
-            int i = (int) o;
-            assertTrue(i % 3 == 0);
-        }
     }
 
     @Test

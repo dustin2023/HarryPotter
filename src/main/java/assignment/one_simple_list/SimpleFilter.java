@@ -1,4 +1,4 @@
-package org.example;
+package assignment.one_simple_list;
 @FunctionalInterface
 public interface SimpleFilter {
 	/**

@@ -1,4 +1,4 @@
-package org.example;
+package assignment.one_simple_list;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -53,7 +53,7 @@ public class SpellbookListImpl implements SpellbookList, Iterable<Object> {
         SpellbookListImpl filteredList = new SpellbookListImpl(); // Create a new list to store filtered elements.
         Spellbook current = head; // Start at the head of the list.
         while (current != null) {    // Iterate through the list until we reach the end.
-            if (filter.include(current.item)){  // If the current element should be included in the filtered list...
+            if (filter.include(current.item)) {  // If the current element should be included in the filtered list...
                 filteredList.add(current.item); // ...add it to the filtered list.
             }
             current = current.next; // Move to the next element.

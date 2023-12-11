@@ -1,4 +1,4 @@
-package org.example;
+package assignment.one_simple_list;
 
 /**
  * Copyright (c) 29.11.23, 19:57
