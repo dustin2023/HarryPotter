@@ -38,7 +38,7 @@ Think about the significance of having these elements encapsulated within a sing
 
 ## Task 2: Implementation
 Here is the final class diagram of the exercise:
-![Classes](assets/class-spec.svg)
+![Classes](assets/class-spec-simple-list.svg)
 
 ### Setup
 1. Fork the magical repository provided.
