@@ -76,21 +76,6 @@ class SpellbookListImplTest {
     }
 
     @Test
-    void testFilterEveryThirdNumber() {
-        SpellbookListImpl result = (SpellbookListImpl) testList.filter(new SimpleFilter() {    // create a new SimpleListImpl called result, which will hold the filtered elements.
-            @Override
-            public boolean include(Object item) {
-                int current = (int) item;
-                return current % 3 == 0;
-            }
-        });
-        for (Object o : result) {
-            int i = (int) o;
-            assertTrue(i % 3 == 0);
-        }
-    }
-
-    @Test
     void testFilterEveryThirdBook() {
         SpellbookListImpl result = (SpellbookListImpl) testList.filter(new SimpleFilter() {      // create a new SimpleListImpl called result, which will hold the filtered elements.
             int index = 0;
