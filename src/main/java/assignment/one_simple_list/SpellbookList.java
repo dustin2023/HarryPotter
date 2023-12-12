@@ -1,15 +1,16 @@
 package assignment.one_simple_list;
 
 /**
- * Copyright (c) 29.11.23, 19:57
- * Since: November 2023
+ * Copyright (c) 11.12.23, 14:47
+ * Since: Dezember 2023
+ *   <p>
  * Author: dustin
+ *  <p>
  * Name: SpellbookList.java
+ *  <p>
  * Project-name: HarryPotter
- * <p>
- * aka SimpleList
+ *
  */
-
 public interface SpellbookList {
     /**
      * Add a given object to the back of the list.

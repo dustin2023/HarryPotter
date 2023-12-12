@@ -56,7 +56,7 @@ kit.
 ## Task 2: Implementation
 
 Here is the final class diagram of the exercise:
-![Classes](assets/class-spec.svg)
+![Classes](assets/class-spec-simple-list.svg)
 
 ### Setup
 
