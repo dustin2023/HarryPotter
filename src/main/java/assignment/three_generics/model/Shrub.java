@@ -10,16 +10,7 @@ package assignment.three_generics.model;
  * <p>
  * Project-name: HarryPotter
  */
-public class Shrub extends Plant {
-    private final PlantColor plantColor;
+public class Shrub {
+    // TODO: Implement the required methods.
 
-    public Shrub(String family, String name, double height) {
-        super(family, name, height);
-        plantColor = PlantColor.GREEN;
-    }
-
-    @Override
-    public PlantColor getColor() {
-        return plantColor;
-    }
 }

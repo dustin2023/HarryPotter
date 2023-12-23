@@ -11,5 +11,5 @@ package assignment.three_generics.model;
  * Project-name: HarryPotter
  */
 public enum PlantColor {
-    GREEN, YELLOW, RED, BLUE, ORANGE, VIOLETTE
+    // TODO: Implement the required methods.
 }
