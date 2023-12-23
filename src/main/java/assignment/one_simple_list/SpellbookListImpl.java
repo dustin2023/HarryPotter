@@ -14,7 +14,6 @@ import java.util.NoSuchElementException;
  * Project-name: HarryPotter
  */
 
-// TODO hinweise hinzufügen, wie bei Leetcode
 public class SpellbookListImpl implements SpellbookList, Iterable<Object> {
     private Spellbook head;
     private int size;
