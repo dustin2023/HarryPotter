@@ -1,18 +1,19 @@
 package assignment.one_simple_list;
 
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
 /**
- * Copyright (c) 11.12.23, 14:46
- * Since: Dezember 2023
- *   <p>
+ * Copyright (c) 29.11.23, 20:18
+ * Since: November 2023
+ * <p>
  * Author: dustin
- *  <p>
- * Name: SpellbookListImpl.java
- *  <p>
+ * <p>
+ * Name: HogwartsToolkit.java
+ * <p>
  * Project-name: HarryPotter
- *
  */
+
 public class SpellbookListImpl implements SpellbookList {
-
     // TODO: Implement the required methods.
-
 }
