@@ -1,0 +1,7 @@
+@startuml
+    +abstract class PlantBedUtility{
+        +{static} <T> splitBedByColor(bed: PlantBed<T>) : Map<PlantColor, MagicalList<T>>
+        +{static}<T> pecs(dest: MagicalList<T>, source: MagicalList<T>): void
+        +{static}<T> pecsWithFilter(dest: MagicalList<T>, source: MagicalList<T>, predicate: Predicate<T>): void
+    }
+@enduml

@@ -16,4 +16,5 @@ import java.util.NoSuchElementException;
 
 public class SpellbookListImpl implements SpellbookList {
     // TODO: Implement the required methods.
+
 }

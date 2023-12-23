@@ -56,6 +56,7 @@ kit.
 ## Task 2: Implementation
 
 Here is the final class diagram of the exercise:
+
 ![Classes](assets/class-spec-simple-list.svg)
 
 ### Setup
@@ -97,7 +98,7 @@ Here is the final class diagram of the exercise:
    specified by the provided `SimpleFilter`.
    This method traverses through the existing list, identifying elements that match the filtering condition defined in
    the `SimpleFilter` interface's `include` method.
-    - Create a new instance of `SimpleListImpl` to store filtered elements.
+    - Create a new instance of `SpellbookListImpl` to store filtered elements.
     - Begin iteration from the list's head, examining each element's suitability against the condition stipulated in
       the `filter`.
     - If an element meets the condition, add it to the new filtered list using the `add` method.

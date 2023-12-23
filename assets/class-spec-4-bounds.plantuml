@@ -1,0 +1,10 @@
+@startuml
+    +class PlantBed<T> {
+        -plants: MagicalList<T>
+
+        +add(plant: T)
+        +size(): int
+        +getPlantsByColor(color: PlantColor): MagicalList<T>
+        +getPlants(): MagicalList<T>
+    }
+@enduml
