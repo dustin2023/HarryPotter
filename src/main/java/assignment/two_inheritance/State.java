@@ -1,7 +1,7 @@
 package assignment.two_inheritance;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * Copyright (c) 12.12.23, 20:16
@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
  * Project-name: HarryPotter
  */
 public abstract class State {
-    private static final Logger logger = LoggerFactory.getLogger(State.class);
+    private static final Logger logger = LogManager.getLogger(State.class);
 
     protected int time = 0;
     protected final int duration;

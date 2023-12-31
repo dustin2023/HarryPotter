@@ -1,8 +1,8 @@
 package assignment.two_inheritance;
 
 import assignment.two_inheritance.states.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * Copyright (c) 12.12.23, 20:15
@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
  * Project-name: HarryPotter
  */
 public class Phoenix {
-    private static final Logger logger = LoggerFactory.getLogger(Phoenix.class);
+    private static final Logger logger = LogManager.getLogger(Phoenix.class);
     private State currentState;
 
     // state durations (set via constructor), ie. the number of ticks in each state
