@@ -1,9 +1,8 @@
 package assignment.four_reflection_annotations.tests;
 
 
-import assignment.four_reflection_annotations.ICNDBApi;
+import assignment.four_reflection_annotations.PotterApiService;
 import assignment.four_reflection_annotations.model.Book;
-import assignment.four_reflection_annotations.model.BookAttributes;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
@@ -29,7 +28,7 @@ class ICNDBTests {
 
     private static final Logger logger = LogManager.getLogger(ICNDBTests.class);
 
-    private ICNDBApi icndbApi;
+    private PotterApiService icndbApi;
 
     @BeforeEach
     void setup() {
@@ -38,7 +37,7 @@ class ICNDBTests {
                 .baseUrl("https://api.potterdb.com")
                 .build();
 
-        icndbApi = retrofit.create(ICNDBApi.class);
+        icndbApi = retrofit.create(PotterApiService.class);
     }
 
 //    @Test
@@ -48,21 +47,21 @@ class ICNDBTests {
 //        book.setAttributes(new BookAttributes());
 //        //book.getAttributes().setTitle("Test Title");
 //
-//        String expectedToString = "Book{id='123', data=null, attributes=BookAttributes{slug='null', author='null', cover='null', dedication='null', pages=0, releaseDate='null', summary='null', title='Test Title', wiki='null'}, relationships=null}";
+//        String expectedToString = "Book{id='123', data=null, attributes=BookAttributes{slug='null', author='null', cover='null', dedication='null', pages=0, releaseDate='null', summary='null', title='null', wiki='null'}, relationships=null}";
 //        assertEquals(expectedToString, book.toString());
 //    }
-/*	@Test
-	void testGetBookByQuery() throws IOException {
-		Book[] j = icndbApi.getBookByQuery("Stone").execute().body().getBooks();
-		assertNotNull(j);
-		assertTrue(j.length > 0);
-		logger.info(j.toString());
-	}*/
+
+//	@Test
+//	void testGetBookByQuery() throws IOException {
+//		Book[] j = icndbApi.getBookByQuery("Stone").execute().body().getBooks();
+//		assertNotNull(j);
+//		assertTrue(j.length > 0);
+//		logger.info(j.toString());
+//	}
 
     @Test
     void testGetRandomBooks() throws IOException {
         Book book = icndbApi.getRandomBook().execute().body();
         assertNotNull(book);
-        logger.info("Book Title: {}", book.getAttributes().getTitle());
     }
 }

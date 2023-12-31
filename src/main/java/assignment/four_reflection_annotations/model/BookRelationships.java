@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 30.12.23, 19:41
+ * Copyright (c) 30-31.12.23, 14:07
  * Since: Dezember 2023
  *   <p>
  * Author: dustin
@@ -10,7 +10,7 @@
  *
  */
 
-package assignment.four_reflection_annotations;
+package assignment.four_reflection_annotations.model;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -30,5 +30,19 @@ public class BookRelationships {
         public List<Chapter> getChapters() {
             return chapters;
         }
+
+        @Override
+        public String toString() {
+            return "ChaptersData{" +
+                    "chapters=" + chapters +
+                    '}';
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "BookRelationships{" +
+                "chaptersData=" + chaptersData +
+                '}';
     }
 }

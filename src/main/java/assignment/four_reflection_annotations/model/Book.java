@@ -1,10 +1,5 @@
 package assignment.four_reflection_annotations.model;
 
-
-import assignment.four_reflection_annotations.BookData;
-import assignment.four_reflection_annotations.BookRelationships;
-import lombok.Data;
-
 import java.util.Objects;
 
 /**
@@ -17,22 +12,13 @@ import java.util.Objects;
  * <p>
  * Project-name: HarryPotter
  */
-@Data // Lombok: Nach Hinzufügen der Lombok-Annotationen können toString(), equals(), und hashCode() für Book entfernt werden, da Lombok sie automatisch generiert
+// Lombok: Nach Hinzufügen der Lombok-Annotationen können toString(), equals(), und hashCode() für Book entfernt werden, da Lombok sie automatisch generiert
 public final class Book {
     private BookData data;
+    private final String id;
+    private final BookAttributes attributes;
+    private final BookRelationships relationships;
 
-    public BookData getData() {
-        return data;
-    }
-
-    public void setData(BookData data) {
-        this.data = data;
-    }
-
-
-    private String id;
-    private BookAttributes attributes;
-    private BookRelationships relationships;
 
     public Book() {
         this.id = "-1";
@@ -40,27 +26,41 @@ public final class Book {
         this.relationships = new BookRelationships();
     }
 
-    public String getId() {
-        return id;
+    public BookData getData() {
+        return data;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public String getId() {
+        return id;
     }
 
     public BookAttributes getAttributes() {
         return attributes;
     }
 
-    public void setAttributes(BookAttributes attributes) {
-        this.attributes = attributes;
-    }
-
     public BookRelationships getRelationships() {
         return relationships;
     }
 
-    public void setRelationships(BookRelationships relationships) {
-        this.relationships = relationships;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return Objects.equals(data, book.data) && Objects.equals(id, book.id) && Objects.equals(attributes, book.attributes) && Objects.equals(relationships, book.relationships);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(data, id, attributes, relationships);
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id='" + id + '\'' +
+                ", attributes=" + attributes +
+                ", relationships=" + relationships +
+                '}';
     }
 }

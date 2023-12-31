@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 30.12.23, 19:39
+ * Copyright (c) 30-31.12.23, 14:07
  * Since: Dezember 2023
  *   <p>
  * Author: dustin
@@ -10,9 +10,8 @@
  *
  */
 
-package assignment.four_reflection_annotations;
+package assignment.four_reflection_annotations.model;
 
-import assignment.four_reflection_annotations.model.BookAttributes;
 import com.google.gson.annotations.SerializedName;
 
 public class BookData {

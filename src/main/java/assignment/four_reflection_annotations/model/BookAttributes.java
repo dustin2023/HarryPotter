@@ -78,4 +78,19 @@ public class BookAttributes {
     public String getWiki() {
         return wiki;
     }
+
+    @Override
+    public String toString() {
+        return "BookAttributes{" +
+                "slug='" + slug + '\'' +
+                ", author='" + author + '\'' +
+                ", cover='" + cover + '\'' +
+                ", dedication='" + dedication + '\'' +
+                ", pages=" + pages +
+                ", releaseDate='" + releaseDate + '\'' +
+                ", summary='" + summary + '\'' +
+                ", title='" + title + '\'' +
+                ", wiki='" + wiki + '\'' +
+                '}';
+    }
 }
