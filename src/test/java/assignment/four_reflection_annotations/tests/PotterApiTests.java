@@ -24,9 +24,9 @@ import static org.junit.jupiter.api.Assertions.*;
  * <p>
  * Project-name: HarryPotter
  */
-class ICNDBTests {
+class PotterApiTests {
 
-    private static final Logger logger = LogManager.getLogger(ICNDBTests.class);
+    private static final Logger logger = LogManager.getLogger(PotterApiTests.class);
 
     private PotterApiService potterApi;
 
