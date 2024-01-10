@@ -16,11 +16,6 @@ dependencies {
     implementation("org.apache.logging.log4j:log4j-api:${log4j2Version}")
     implementation("org.apache.logging.log4j:log4j-core:${log4j2Version}")
 
-//    implementation('org.projectlombok:lombok:1.18.22')
-
-
-    implementation("com.squareup.retrofit2:retrofit:${retrofit_version}")
-    implementation("com.squareup.retrofit2:converter-gson:${retrofit_version}")
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testImplementation("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
