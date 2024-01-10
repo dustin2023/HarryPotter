@@ -15,8 +15,8 @@ import java.util.Arrays;
  * Project-name: HarryPotter
  */
 public class Books {
-    @SerializedName("data")
-    Book[] data;
+   // @SerializedName("data")
+    private Book[] data;
 
     public Book[] getBooks() {
         return data;

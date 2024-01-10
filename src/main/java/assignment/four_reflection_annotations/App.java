@@ -37,10 +37,25 @@ public class App {
             Book book = bookService.getRandomBook();
             logger.info("Book Title: {}", book.getData().getAttributes().getTitle());
 
+            // all Books with specific Query in Title
+            Book[] booksWithSpecificTitle = bookService.getBookByQuery("Stone").getBooks();
+            if (booksWithSpecificTitle.length == 0) {
+                logger.error("No books found.");
+            } else {
+                logger.info("Books found: {}", booksWithSpecificTitle.length);
+            }
+
+            logger.info("Books with specific Query in Title: ");
+            for (Book b : booksWithSpecificTitle) {
+                logger.info("Book Title: {}", b.getAttributes().getTitle());
+            }
+
+
             // all Books with all Attributes
             Response<Books> booksResponse = bookService.getAllBooks();
             if (booksResponse.isSuccessful()) {
                 Books books = booksResponse.body();
+                // TODO: Error handling
                 Book[] booksData = books.getBooks();
                 for (int i = 0; i < booksData.length; i++) {
                     logger.info("{}. Book Title: {}", i + 1, booksData[i]);
@@ -52,11 +67,6 @@ public class App {
             } else {
                 logger.error("Error fetching books. Response code: {}", booksResponse.code());
             }
-
-//            Book[] books = bookService.getBookByQuery("Stone").getBooks();
-//            for (Book b : books) {
-//                logger.info("Book Title: {}", b.getData().getAttributes().getTitle());
-//            }
         } catch (IOException e) {
             logger.error("Error fetching random book: {}", e.getMessage());
         }

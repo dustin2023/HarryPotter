@@ -1,4 +1,8 @@
-/*
+package assignment.four_reflection_annotations.model;
+
+import com.google.gson.annotations.SerializedName;
+
+/**
  * Copyright (c) 30-30.12.23, 19:41
  * Since: Dezember 2023
  *   <p>
@@ -9,12 +13,6 @@
  * Project-name: HarryPotter
  *
  */
-
-package assignment.four_reflection_annotations.model;
-
-import com.google.gson.annotations.SerializedName;
-
-
 public class BookAttributes {
     @SerializedName("slug")
     private String slug;

@@ -1,5 +1,7 @@
 package assignment.four_reflection_annotations.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.Objects;
 
 /**
@@ -20,8 +22,9 @@ public final class Book {
     private final BookRelationships relationships;
 
 
-    public Book() {
+    public Book(BookData data) {
         this.id = "-1";
+        this.data = data;
         this.attributes = new BookAttributes();
         this.relationships = new BookRelationships();
     }
