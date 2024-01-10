@@ -1,7 +1,7 @@
 package assignment.two_inheritance;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import static assignment.two_inheritance.Phoenix.State.*;
 
@@ -16,8 +16,7 @@ import static assignment.two_inheritance.Phoenix.State.*;
  * Project-name: HarryPotter
  */
 public class Phoenix {
-    private static final Logger logger = LoggerFactory.getLogger(Phoenix.class);
-    // valid states
+    private static final Logger logger = LogManager.getLogger(Phoenix.class);
     public enum State {SLEEPING, FLYING, RESTING, PLAYFUL, DEAD}
 
     // initially, animals are sleeping
