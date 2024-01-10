@@ -5,33 +5,24 @@ import java.util.function.Predicate;
 /**
  * Copyright (c) 23.12.23, 13:54
  * Since: Dezember 2023
- *   <p>
+ * <p>
  * Author: dustin
- *  <p>
+ * <p>
  * Name: MagicalList.java
- *  <p>
+ * <p>
  * Project-name: HarryPotter
- *
  */
-public interface MagicalList<T> extends Iterable<T> {
-
+public interface MagicalList extends Iterable {
     int size();
 
-    T get(int index);
+    void add(Object item);
 
-    void set(int index, T item);
 
-    void add(T item);
+    Object get(int index);
 
-    default MagicalList<T> filter(Predicate<T> predicate) {
-        MagicalList<T> filteredList = new MagicalListImpl<>();
-        for (T item : this) {
-            if (predicate.test(item)) {
-                filteredList.add(item);
-            }
-        }
+    void set(int index, Object item);
 
-        return filteredList;
-    }
+    SimpleList filter(Predicate predicate);
+
 }
 

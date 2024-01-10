@@ -10,21 +10,7 @@ package assignment.three_generics.model;
  * <p>
  * Project-name: HarryPotter
  */
-public class Flower extends Plant {
-    private final PlantColor plantColor;
+public class Flower {
+    // TODO: Implement the required methods.
 
-    public Flower(String family, String name, double height, PlantColor plantColor) {
-        super(family, name, height);
-
-        /* ensure that a flower is never green */
-        if (plantColor == PlantColor.GREEN) {
-            throw new IllegalStateException("A plant may not be green");
-        }
-        this.plantColor = plantColor;
-    }
-
-    @Override
-    public PlantColor getColor() {
-        return plantColor;
-    }
 }

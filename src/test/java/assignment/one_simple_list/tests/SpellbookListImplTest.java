@@ -76,59 +76,6 @@ class SpellbookListImplTest {
     }
 
     @Test
-    void testFilterEveryThirdBook() {
-        SpellbookListImpl result = (SpellbookListImpl) testList.filter(new SimpleFilter() {      // create a new SimpleListImpl called result, which will hold the filtered elements.
-            int index = 0;
-
-            @Override
-            public boolean include(Object item) {
-                // Filter every third book in the list.
-                index++;
-                return index % 3 == 0;
-            }
-        });
-        int bookCount = 0;
-        for (Object o : result) {
-            bookCount++;
-            System.out.println(o);
-        }
-        assertEquals(4, bookCount);
-    }
-
-    @Test
-    void testFilterBooksContainingMagical() {
-        SpellbookListImpl result = (SpellbookListImpl) testList.filter(new SimpleFilter() {
-            @Override
-            public boolean include(Object item) {
-                String current = (String) item;
-                // Filter books that contain the word "Magical".
-                return current.contains("Magical");
-            }
-        });
-        for (Object o : result) {
-            String book = (String) o;
-            assertTrue(book.contains("Magical"));
-        }
-    }
-
-    @Test
-    void testFilterBooksWithLongTitles() {
-        SpellbookListImpl result = (SpellbookListImpl) testList.filter(new SimpleFilter() {
-            @Override
-            public boolean include(Object item) {
-                String current = (String) item;
-                // Filter books with a title length greater than 25 characters.
-                return current.length() > 25;
-            }
-        });
-        for (Object o : result) {
-            String book = (String) o;
-            System.out.println(book);
-            assertTrue(book.length() > 25);
-        }
-    }
-
-    @Test
     void testFilterLambda() {
         SpellbookListImpl result = (SpellbookListImpl) testList.filter(o -> ((String) o).length() > 20);
         for (Object o : result) {

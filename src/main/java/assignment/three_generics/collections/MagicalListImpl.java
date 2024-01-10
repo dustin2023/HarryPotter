@@ -13,13 +13,14 @@ import java.util.Iterator;
  * <p>
  * Project-name: HarryPotter
  */
-public class MagicalListImpl<T> implements MagicalList<T> {
 
-    private ListElement<T> head;
+public class MagicalListImpl implements MagicalList {
+
+    private ListElement head;
 
     private int size;
 
-    public MagicalListImpl() {
+    public SimpleListImpl() {
         head = null;
     }
 
@@ -29,60 +30,27 @@ public class MagicalListImpl<T> implements MagicalList<T> {
     }
 
     @Override
-    public T get(int index) {
-
-        ListElement<T> current = head;
-        int n = 0;
-        while (current != null && n != index) {
-            current = current.getNext();
-            n++;
-        }
-        if (current != null) {
-            return current.item;
-        }
-        return null;
-    }
-
-    @Override
-    public void set(int index, T item) {
-        ListElement<T> current = head;
-        int n = 0;
-
-        if (index > size() - 1) {
-            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size());
-        } else {
-            while (current != null && n != index) {
-                current = current.getNext();
-                n++;
-            }
-            if (current != null && item != null) {
-                current.setItem(item);
-            }
-        }
-    }
-
-    @Override
-    public void add(T item) {
+    public void add(Object item) {
         if (head == null) {
-            head = new ListElement<>(item);
+            head = new ListElement(item);
         } else {
-            ListElement<T> current = head;
+            ListElement current = head;
             while (current.getNext() != null) {
                 current = current.getNext();
             }
-            current.setNext(new ListElement<>(item));
+            current.setNext(new ListElement(item));
         }
         size++;
     }
 
     @Override
-    public Iterator<T> iterator() {
+    public Iterator iterator() {
         return new SimpleIterator();
     }
 
-    private class SimpleIterator implements Iterator<T> {
+    private class SimpleIterator implements Iterator {
 
-        private ListElement<T> current = head;
+        private ListElement current = head;
 
         @Override
         public boolean hasNext() {
@@ -90,39 +58,40 @@ public class MagicalListImpl<T> implements MagicalList<T> {
         }
 
         @Override
-        public T next() {
-            T tmp = current.getItem();
+        public Object next() {
+            Object tmp = current.getItem();
             current = current.getNext();
             return tmp;
         }
     }
 
-    private static class ListElement<T> {
+    private static class ListElement {
 
-        T item;
+        Object item;
 
-        private ListElement<T> next;
+        private ListElement next;
 
-        public ListElement(T item) {
+        public ListElement(Object item) {
             this.item = item;
             this.next = null;
         }
 
-        public T getItem() {
+        public Object getItem() {
             return item;
         }
 
-        public void setItem(T item) {
+        public void setItem(Object item) {
             this.item = item;
         }
 
-        public ListElement<T> getNext() {
+        public ListElement getNext() {
             return next;
         }
 
-        public void setNext(ListElement<T> next) {
+        public void setNext(ListElement next) {
             this.next = next;
         }
     }
+}
 
 }
