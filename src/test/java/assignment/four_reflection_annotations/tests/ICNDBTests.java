@@ -51,13 +51,12 @@ class ICNDBTests {
 //        assertEquals(expectedToString, book.toString());
 //    }
 
-//	@Test
-//	void testGetBookByQuery() throws IOException {
-//		Book[] j = icndbApi.getBookByQuery("Stone").execute().body().getBooks();
-//		assertNotNull(j);
-//		assertTrue(j.length > 0);
-//		logger.info(j.toString());
-//	}
+	@Test
+	void testGetBookByQuery() throws IOException {
+		Book[] j = icndbApi.getBookByQuery("Stone").execute().body().getBooks();
+		assertNotNull(j);
+		assertTrue(j.length > 0);
+	}
 
     @Test
     void testGetRandomBooks() throws IOException {
