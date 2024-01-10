@@ -26,49 +26,62 @@ public class App {
     private static final Logger logger = LogManager.getLogger(App.class);
 
     public static void main(String[] args) throws IOException {
-        Retrofit retrofit = new Retrofit.Builder()
+        try {
+            Retrofit retrofit = createRetrofitInstance();
+            BookService bookService = new BookService(retrofit);
+
+            displayRandomBookTitle(bookService);
+
+            findBooksBySpecificQuery(bookService);
+
+            displayAllBooks(bookService);
+
+        } catch (IOException e) {
+            logger.error("Error fetching random book: {}", e.getMessage());
+        }
+    }
+
+    private static Retrofit createRetrofitInstance() {
+        return new Retrofit.Builder()
                 .baseUrl("https://api.potterdb.com")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
+    }
 
-        BookService bookService = new BookService(retrofit);
-        try {
-            // random Book by Title
-            Book book = bookService.getRandomBook();
-            logger.info("Book Title: {}", book.getData().getAttributes().getTitle());
+    private static void displayRandomBookTitle(BookService bookService) throws IOException {
+        Book book = bookService.getRandomBook();
+        logger.info("Random Book Title: {}", book.getData().getAttributes().getTitle());
+    }
 
-            // all Books with specific Query in Title
-            Book[] booksWithSpecificTitle = bookService.getBookByQuery("Stone").getBooks();
-            if (booksWithSpecificTitle.length == 0) {
-                logger.error("No books found.");
-            } else {
-                logger.info("Books found: {}", booksWithSpecificTitle.length);
-            }
-
-            logger.info("Books with specific Query in Title: ");
+    private static void findBooksBySpecificQuery(BookService bookService) throws IOException {
+        Book[] booksWithSpecificTitle = bookService.getBookByQuery("Stone").getBooks();
+        if (booksWithSpecificTitle.length == 0) {
+            logger.error("No books found with the specific query.");
+        } else {
+            logger.info("Books found with specific query in Title: {}", booksWithSpecificTitle.length);
             for (Book b : booksWithSpecificTitle) {
                 logger.info("Book Title: {}", b.getAttributes().getTitle());
             }
+        }
+    }
 
-
-            // all Books with all Attributes
-            Response<Books> booksResponse = bookService.getAllBooks();
-            if (booksResponse.isSuccessful()) {
-                Books books = booksResponse.body();
-                // TODO: Error handling
+    private static void displayAllBooks(BookService bookService) throws IOException {
+        Response<Books> booksResponse = bookService.getAllBooks();
+        if (booksResponse.isSuccessful()) {
+            Books books = booksResponse.body();
+            if (books != null && books.getBooks() != null) {
                 Book[] booksData = books.getBooks();
-                for (int i = 0; i < booksData.length; i++) {
-                    logger.info("{}. Book Title: {}", i + 1, booksData[i]);
-                }
 
-                // count Books
-                int countBooks = booksData.length;
-                logger.info("length: {}", countBooks);
+                logger.info("All Books: ");
+                for (int i = 0; i < booksData.length; i++) {
+                    logger.info("{}. Book Title: {}", i + 1, booksData[i].getAttributes().getTitle());
+                }
+                logger.info("Total number of books: {}", booksData.length);
             } else {
-                logger.error("Error fetching books. Response code: {}", booksResponse.code());
+                logger.error("No books data available.");
             }
-        } catch (IOException e) {
-            logger.error("Error fetching random book: {}", e.getMessage());
+        } else {
+            logger.error("Error fetching books. Response code: {}", booksResponse.code());
         }
     }
 }
