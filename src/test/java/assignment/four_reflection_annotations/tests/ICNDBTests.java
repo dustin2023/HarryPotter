@@ -28,7 +28,7 @@ class ICNDBTests {
 
     private static final Logger logger = LogManager.getLogger(ICNDBTests.class);
 
-    private PotterApiService icndbApi;
+    private PotterApiService potterApi;
 
     @BeforeEach
     void setup() {
@@ -37,30 +37,12 @@ class ICNDBTests {
                 .baseUrl("https://api.potterdb.com")
                 .build();
 
-        icndbApi = retrofit.create(PotterApiService.class);
+        potterApi = retrofit.create(PotterApiService.class);
     }
-
-//    @Test
-//    void testToString() {
-//        Book book = new Book();
-//        book.setId("123");
-//        book.setAttributes(new BookAttributes());
-//        //book.getAttributes().setTitle("Test Title");
-//
-//        String expectedToString = "Book{id='123', data=null, attributes=BookAttributes{slug='null', author='null', cover='null', dedication='null', pages=0, releaseDate='null', summary='null', title='null', wiki='null'}, relationships=null}";
-//        assertEquals(expectedToString, book.toString());
-//    }
-
-	@Test
-	void testGetBookByQuery() throws IOException {
-		Book[] j = icndbApi.getBookByQuery("Stone").execute().body().getBooks();
-		assertNotNull(j);
-		assertTrue(j.length > 0);
-	}
 
     @Test
     void testGetRandomBooks() throws IOException {
-        Book book = icndbApi.getRandomBook().execute().body();
+        Book book = potterApi.getRandomBook().execute().body();
         assertNotNull(book);
     }
 }

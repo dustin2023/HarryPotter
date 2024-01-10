@@ -23,9 +23,5 @@ public interface PotterApiService {
     @GET("/v1/books/random")
     Call<Book> getRandomBook();
 
-    @GET("/v1/books")
-    Call<Books> getBookByQuery(@Query("filter[title_cont]") String title);
-
-    @GET("/v1/books")
-    Call<Books> getAllBooks();
+    // TODO: add missing Request-Method
 }

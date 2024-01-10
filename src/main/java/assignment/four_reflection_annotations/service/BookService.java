@@ -23,29 +23,5 @@ import java.io.IOException;
  * Project-name: HarryPotter
  */
 public class BookService {
-    private static final Logger logger = LogManager.getLogger(BookService.class);
-
-    private final Retrofit retrofit;
-
-    public BookService(Retrofit retrofit) {
-        this.retrofit = retrofit;
-    }
-
-    public Book getRandomBook() throws IOException {
-        PotterApiService service = retrofit.create(PotterApiService.class);
-        Call<Book> bookCall = service.getRandomBook();
-        return bookCall.execute().body();
-    }
-
-    public Response<Books> getAllBooks() throws IOException {
-        PotterApiService service = retrofit.create(PotterApiService.class);
-        Call<Books> bookCall = service.getAllBooks();
-        return bookCall.execute();
-    }
-
-    public Books getBookByQuery(String query) throws IOException {
-        PotterApiService service = retrofit.create(PotterApiService.class);
-        Call<Books> bookCall = service.getBookByQuery(query);
-        return bookCall.execute().body();
-    }
+    // TODO: add missing fields and methods
 }

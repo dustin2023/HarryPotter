@@ -15,10 +15,5 @@ import java.util.Arrays;
  * Project-name: HarryPotter
  */
 public class Books {
-   // @SerializedName("data")
-    private Book[] data;
-
-    public Book[] getBooks() {
-        return data;
-    }
+    // TODO: add missing fields and methods
 }
