@@ -2,8 +2,8 @@ package assignment.two_inheritance.states;
 
 import assignment.two_inheritance.Phoenix;
 import assignment.two_inheritance.State;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Copyright (c) 12.12.23, 20:11
@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
  */
 
 public class Resting extends State {
-    private static final Logger logger = LoggerFactory.getLogger(Resting.class);
+    private static final Logger logger = LogManager.getLogger(Resting.class);
 
     private final int remainingWakeTime;
 

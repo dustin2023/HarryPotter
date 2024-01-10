@@ -1,0 +1,21 @@
+@startuml
+
+package assignment.four_reflection_annotations.model {
+    class Book {
+        - data: BookData
+        - id: String
+        - attributes: BookAttributes
+        - relationships: BookRelationships
+
+        + Book(data: BookData)
+        + getData(): BookData
+        + getId(): String
+        + getAttributes(): BookAttributes
+        + getRelationships(): BookRelationships
+        + equals(o: Object): boolean
+        + hashCode(): int
+        + toString(): String
+    }
+}
+
+@enduml
