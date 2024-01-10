@@ -144,6 +144,24 @@ Have a look at the [docs](https://github.com/google/gson/blob/master/UserGuide.m
 
 > Hint: the given JSON object describes the exact structure of the JSON objects we want to deserialize.
 > Use anntations to help gson map JSON fields to differently named Java field names.
+> We also create a `BookData` class to encapsulate the `BookAttributes` and `BookRelationships` classes.
+
+Something like this:
+```java
+public class BookData {
+
+    @SerializedName("id")
+    private String id;
+
+    @SerializedName("type")
+    private String type;
+
+    @SerializedName("attributes")
+    private BookAttributes attributes;
+    // ...
+}
+```
+
 
 **Here is what to do:**
 - Import Gson to your project (dependencies in your build.gradle)
