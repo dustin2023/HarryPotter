@@ -67,20 +67,20 @@ Here is the final class diagram of the exercise:
 
 ### Details
 
-1. Implement `SpellbookElement` as a static inner class within the `SpellbookList` class.
+1. Implement `SpellbookElement` as a static inner class within the `SpellbookListImpl` class.
     - Why is this class static and ideally `private`?
-2. Implement the `SpellbookIterator` interface as a non-static inner class within the `SpellbookList` class.
+2. Implement the `SpellbookIterator` interface as a non-static inner class within the `SpellbookListImpl` class.
    This class is crucial for traversing the linked list of spell books.
    Ensure the iterator starts at the head of the list and progresses sequentially through the elements.
    Making it non-static allows direct access to the outer class's (SpellbookList's) properties and methods, crucial for
    effective iteration.
     - Why is it helpful to make this class non-static?
-3. Add the `Iterable` interface to your `SpellbookList`, and implement the required methods.
+3. Add the `Iterable` interface to your `SpellbookListImpl`, and implement the required methods.
     - Why is implementing the `Iterable` interface essential for a (good) list implementation? (Hint: Check the test
       cases!)
     - Are there any language definition constraints to this?
    #### Hints:
-    - Implement the `add` method within the `SpellbookList` class to insert a given `Object` at the end of the linked
+    - Implement the `add` method within the `SpellbookListImpl` class to insert a given `Object` at the end of the linked
       list.
         - Ensure the method handles both empty and non-empty lists appropriately. If the list is empty, set the new
           element as the head.
@@ -90,11 +90,11 @@ Here is the final class diagram of the exercise:
           books.
           A good list implementation should allow iteration through its elements seamlessly. The `Iterable` interface is
           essential for enabling enhanced list functionality, particularly when used in test cases. Ensure no language
-          definition constraints hinder the implementation of this interface for the `SpellbookList` class.
+          definition constraints hinder the implementation of this interface for the `SpellbookListImpl` class.
 
 ### Anonymous (Inner) Classes and Lambda Expressions
 
-1. Implement the `filter` method for your `SpellbookList` class to create a new filtered list that meets the criteria
+1. Implement the `filter` method for your `SpellbookListImpl` class to create a new filtered list that meets the criteria
    specified by the provided `SimpleFilter`.
    This method traverses through the existing list, identifying elements that match the filtering condition defined in
    the `SimpleFilter` interface's `include` method.
